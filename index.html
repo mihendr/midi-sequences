@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDI Секвенции</title>
+    <script src="https://cdn.jsdelivr.net/npm/@cifkao/html-midi-player@1.7.0/dist/html-midi-player.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+        midi-player { width: 100%; max-width: 800px; margin: 20px auto; }
+    </style>
+</head>
+<body>
+    <h1>Изберете секвенция за възпроизвеждане</h1>
+    <p>Кликнете на бутон [1-8] за да чуете съответната MIDI секвенция.</p>
+    
+    <button onclick="playSequence(1)">1 - Cathartic Cycle (Σ₁)</button>
+    <button onclick="playSequence(2)">2 - Existential Spiral (Σ₂)</button>
+    <button onclick="playSequence(3)">3 - Harmonic Duo-motif (Σ₃)</button>
+    <button onclick="playSequence(4)">4 - Heroic Rise (Σ₄)</button>
+    <button onclick="playSequence(5)">5 - Tragic Counterpoint (Σ₅)</button>
+    <button onclick="playSequence(6)">6 - Meditative Cycle (Σ₆)</button>
+    <button onclick="playSequence(7)">7 - Introspective Fold (Σ₇)</button>
+    <button onclick="playSequence(8)">8 - Humorous Effect (Σ₈)</button>
+    
+    <midi-player id="player" src=""></midi-player>
+    
+    <script>
+        const files = {
+            1: 'S1_full_instruments.mid',
+            2: 'S2_full_instruments.mid',
+            3: 'S3_full_instruments.mid',
+            4: 'S4_full_instruments.mid',
+            5: 'S5_full_instruments.mid',
+            6: 'S6_full_instruments.mid',
+            7: 'S7_full_instruments.mid',
+            8: 'S8_full_instruments.mid'
+        };
+        
+        function playSequence(num) {
+            const player = document.getElementById('player');
+            player.src = files[num];
+            player.load();
+            player.play();
+        }
+    </script>
+</body>
+</html>
