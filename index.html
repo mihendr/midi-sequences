@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIDI Секвенции</title>
-    <script src="https://cdn.jsdelivr.net/npm/@cifkao/html-midi-player@1.7.0/dist/html-midi-player.min.js"></script>
+    <title>MIDI Секвенции (като MP3)</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        button { margin: 10px; padding: 10px 20px; font-size: 16px; }
-        midi-player { width: 100%; max-width: 800px; margin: 20px auto; }
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; background: #f4f4f4; }
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        audio { width: 100%; max-width: 800px; margin: 20px auto; display: block; }
     </style>
 </head>
 <body>
     <h1>Изберете секвенция за възпроизвеждане</h1>
-    <p>Кликнете на бутон [1-8] за да чуете съответната MIDI секвенция.</p>
+    <p>Кликнете на бутон [1-8] за да чуете съответната MP3 секвенция. Звукът трябва да е перфектен!</p>
     
     <button onclick="playSequence(1)">1 - Cathartic Cycle (Σ₁)</button>
     <button onclick="playSequence(2)">2 - Existential Spiral (Σ₂)</button>
@@ -24,18 +24,18 @@
     <button onclick="playSequence(7)">7 - Introspective Fold (Σ₇)</button>
     <button onclick="playSequence(8)">8 - Humorous Effect (Σ₈)</button>
     
-    <midi-player id="player" src=""></midi-player>
+    <audio id="player" controls></audio>
     
     <script>
         const files = {
-            1: 'S1_full_instruments.mid',
-            2: 'S2_full_instruments.mid',
-            3: 'S3_full_instruments.mid',
-            4: 'S4_full_instruments.mid',
-            5: 'S5_full_instruments.mid',
-            6: 'S6_full_instruments.mid',
-            7: 'S7_full_instruments.mid',
-            8: 'S8_full_instruments.mid'
+            1: 'S1_full_instruments.mp3',
+            2: 'S2_full_instruments.mp3',
+            3: 'S3_full_instruments.mp3',
+            4: 'S4_full_instruments.mp3',
+            5: 'S5_full_instruments.mp3',
+            6: 'S6_full_instruments.mp3',
+            7: 'S7_full_instruments.mp3',
+            8: 'S8_full_instruments.mp3'
         };
         
         function playSequence(num) {
